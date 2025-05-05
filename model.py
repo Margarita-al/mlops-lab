@@ -7,7 +7,7 @@ import joblib
 def train_model():
     iris = load_iris()
     X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.3, random_state=42)
-    model = LogisticRegression(max_iter=2)
+    model = LogisticRegression(max_iter=200)
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
